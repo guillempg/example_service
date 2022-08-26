@@ -1,0 +1,15 @@
+## The following actions were taken from 
+## https://github.com/intersystems-community/configuration-merge-file-2020.4/blob/master/3-Configuration-Databases_and_Namespaces/config-merge-file.conf
+
+[Actions]
+# physical, OS level, definition for a db creation op
+CreateDatabaseFile:Directory=/usr/irissys/mgr/devdb
+
+# internal IRIS system registration of the same db
+CreateDatabase:Name=devdb,Directory=/usr/irissys/mgr/devdb
+
+# Namespace definition
+CreateNamespace:Name=development,Globals=devdb,Routines=user
+
+# Create user
+CreateUser:Name=dev,PasswordExternal=dev
